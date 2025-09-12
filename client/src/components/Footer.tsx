@@ -22,8 +22,6 @@ export default function Footer() {
 
   const support = [
     { name: "Contact", href: "#contact" },
-    { name: "Documentation", href: "#docs" },
-    { name: "Support Center", href: "#support" },
     { name: "Privacy Policy", href: "#privacy" }
   ];
 
