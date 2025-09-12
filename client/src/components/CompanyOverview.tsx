@@ -114,48 +114,53 @@ export default function CompanyOverview({ onExploreMore }: CompanyOverviewProps)
           ))}
         </div>
 
-        {/* Images & Achievements */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <img
-              src={facilityImage}
-              alt="PICABORD research facility"
-              className="rounded-xl shadow-lg w-full h-64 object-cover"
-              data-testid="img-facility"
-            />
-            <img
-              src={buildingImage}
-              alt="PICABORD headquarters"
-              className="rounded-xl shadow-lg w-full h-64 object-cover"
-              data-testid="img-building"
-            />
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-6">By the Numbers</h3>
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-foreground mb-1">
-                    {achievement.number}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {achievement.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Tomorrow's Technology */}
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-chart-1/10 to-chart-2/10 rounded-3xl p-12 border border-chart-1/20">
+            <h3 className="text-3xl font-bold mb-6">
+              Building Tomorrow's{" "}
+              <span className="bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">
+                Technology
+              </span>
+            </h3>
             
-            <p className="text-muted-foreground mb-6">
-              From our state-of-the-art research facilities to our global presence, 
-              PICABORD continues to expand its impact through innovative technology 
-              and strategic partnerships worldwide.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              We're developing products for a better tomorrow, spanning the entire spectrum 
+              of innovation. From precision embedded systems that power the next generation 
+              of devices to cutting-edge AI DeepTech that reshapes how we understand and 
+              interact with the world around us.
             </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="space-y-3">
+                <div className="w-16 h-16 bg-gradient-to-r from-chart-1 to-chart-2 rounded-2xl mx-auto opacity-20"></div>
+                <h4 className="font-semibold">Embedded Systems</h4>
+                <p className="text-sm text-muted-foreground">
+                  Precision-engineered solutions for tomorrow's connected world
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="w-16 h-16 bg-gradient-to-r from-chart-1 to-chart-2 rounded-2xl mx-auto opacity-20"></div>
+                <h4 className="font-semibold">AI DeepTech</h4>
+                <p className="text-sm text-muted-foreground">
+                  Advanced artificial intelligence pushing the boundaries of possibility
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="w-16 h-16 bg-gradient-to-r from-chart-1 to-chart-2 rounded-2xl mx-auto opacity-20"></div>
+                <h4 className="font-semibold">Future Forward</h4>
+                <p className="text-sm text-muted-foreground">
+                  Innovation that transforms ideas into reality for a better tomorrow
+                </p>
+              </div>
+            </div>
             
             <Button 
               onClick={onExploreMore}
               data-testid="button-explore-divisions"
-              className="bg-gradient-to-r from-chart-1 to-primary"
+              className="bg-gradient-to-r from-chart-1 to-chart-2 text-white px-8"
             >
               Explore Our Divisions
             </Button>
