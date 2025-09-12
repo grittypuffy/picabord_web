@@ -13,6 +13,7 @@ export default function Navigation({ currentSection, onSectionChange }: Navigati
 
   const sections = [
     { id: "home", label: "Home" },
+    { id: "pika", label: "PIKA" },
     { id: "tec", label: "TEC" },
     { id: "arclight", label: "ArcLight" },
     { id: "deeptech", label: "Deeptech" },
