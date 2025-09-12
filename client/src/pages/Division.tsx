@@ -45,63 +45,21 @@ export default function Division({ division, onBack }: DivisionProps) {
     },
     arclight: {
       title: "ArcLight", 
-      subtitle: "Solar Energy Solutions",
-      description: "Advanced solar energy solutions and photovoltaic technology that harness the power of the sun to create sustainable, efficient energy systems for residential, commercial, and industrial applications.",
-      color: "from-primary to-chart-2",
-      features: [
-        "High-Efficiency Solar Panels",
-        "Smart Grid Integration",
-        "Energy Storage Solutions",
-        "Solar Tracking Systems",
-        "Performance Monitoring",
-        "Sustainable Energy Management"
-      ],
-      applications: [
-        "Residential Solar Systems",
-        "Commercial Solar Farms",
-        "Industrial Energy Solutions",
-        "Off-Grid Power Systems"
-      ]
+      subtitle: "All Weather Solar Panel Development",
+      description: "All weather solar panel development that delivers consistent energy generation regardless of environmental conditions, ensuring reliable solar power in any climate.",
+      color: "from-primary to-chart-2"
     },
     deeptech: {
       title: "Deeptech",
-      subtitle: "Deep Technology Research",
-      description: "Cutting-edge deep technology research and development initiatives that push the boundaries of artificial intelligence, machine learning, and computational sciences.",
-      color: "from-chart-2 to-chart-1", 
-      features: [
-        "AI Research & Development",
-        "Machine Learning Algorithms",
-        "Advanced Data Analytics",
-        "Neural Network Architecture",
-        "Computer Vision Systems",
-        "Natural Language Processing"
-      ],
-      applications: [
-        "Autonomous Systems",
-        "Predictive Analytics",
-        "Computer Vision",
-        "Robotics & Automation"
-      ]
+      subtitle: "Advanced Technology Projects",
+      description: "Deeptech projects that power the betterment of applications, focusing on breakthrough technologies that solve complex challenges and drive innovation across industries.",
+      color: "from-chart-2 to-chart-1"
     },
     annotiq: {
       title: "AnnotiQ",
-      subtitle: "Intelligent Data Processing", 
-      description: "Intelligent annotation and data processing solutions that transform how modern enterprises handle, process, and derive insights from their vast data repositories.",
-      color: "from-chart-1 to-chart-2",
-      features: [
-        "Automated Data Processing", 
-        "Intelligent Annotation Systems",
-        "Quality Control & Validation",
-        "Enterprise Integration",
-        "Scalable Data Pipelines",
-        "Real-time Processing"
-      ],
-      applications: [
-        "Healthcare Data Processing",
-        "Financial Analytics",
-        "Media & Content Management", 
-        "Research Data Analysis"
-      ]
+      subtitle: "AI-Based Annotation System", 
+      description: "AI based annotation system for a multitude of resources, providing intelligent labeling and processing capabilities for diverse data types and formats.",
+      color: "from-chart-1 to-chart-2"
     }
   };
 
@@ -227,48 +185,25 @@ export default function Division({ division, onBack }: DivisionProps) {
               </div>
             </div>
           ) : (
-            /* Standard layout for other divisions */
-            <div className="grid lg:grid-cols-2 gap-12">
-              <Card className="p-8 hover-elevate">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 bg-gradient-to-r ${data.color} rounded-lg flex items-center justify-center`}>
-                      <Zap className="w-5 h-5 text-primary-foreground" />
-                    </div>
-                    <CardTitle>Key Features</CardTitle>
-                  </div>
-                </CardHeader>
+            /* Simple layout for other divisions - description only */
+            <div className="max-w-4xl mx-auto text-center">
+              <Card className="p-12 hover-elevate">
                 <CardContent className="p-0">
-                  <div className="space-y-3">
-                    {data.features.map((feature: string, index: number) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-chart-1 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
+                  <div className={`w-16 h-16 bg-gradient-to-r ${data.color} rounded-lg flex items-center justify-center mx-auto mb-8`}>
+                    <Zap className="w-8 h-8 text-primary-foreground" />
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="p-8 hover-elevate">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 bg-gradient-to-r ${data.color} rounded-lg flex items-center justify-center`}>
-                      <Globe className="w-5 h-5 text-primary-foreground" />
-                    </div>
-                    <CardTitle>Applications</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="grid gap-4">
-                    {data.applications.map((app: string, index: number) => (
-                      <div 
-                        key={index}
-                        className="p-4 bg-muted/50 rounded-lg hover-elevate transition-all duration-200"
-                      >
-                        <span className="font-medium">{app}</span>
-                      </div>
-                    ))}
+                  <h3 className="text-2xl font-bold mb-6">
+                    <span className={`bg-gradient-to-r ${data.color} bg-clip-text text-transparent`}>
+                      {data.subtitle}
+                    </span>
+                  </h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                    {data.description}
+                  </p>
+                  <div className="mt-8">
+                    <Badge className="bg-gradient-to-r from-chart-1 to-primary text-primary-foreground">
+                      Coming Soon
+                    </Badge>
                   </div>
                 </CardContent>
               </Card>
