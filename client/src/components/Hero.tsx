@@ -18,23 +18,35 @@ export default function Hero({ onLearnMore, onWatchDemo }: HeroProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                 <span className="bg-gradient-to-r from-chart-1 via-primary to-chart-2 bg-clip-text text-transparent">
-                  PIKA1
+                  PICABORD
                 </span>
                 <br />
-                <span className="text-foreground">Revolutionary</span>
-                <br />
-                <span className="text-muted-foreground text-3xl md:text-4xl lg:text-5xl">
-                  Technology
+                <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl">
+                  Built for every horizon
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                Experience the future of advanced technology with PIKA1 - our flagship product 
-                that combines cutting-edge innovation with intuitive design to deliver 
-                unprecedented performance and reliability.
+                We pioneer advanced technology solutions across multiple horizons - from precision engineering 
+                and solar innovation to deep tech research and intelligent data processing. 
+                Our integrated approach transforms industries and empowers the future.
               </p>
+              
+              <div className="bg-gradient-to-r from-primary/10 to-chart-1/10 rounded-2xl p-6 border border-primary/20">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-chart-1 to-primary bg-clip-text text-transparent">
+                    PIKA1
+                  </span>
+                  <span className="text-foreground"> - Our Flagship Innovation</span>
+                </h2>
+                <p className="text-muted-foreground">
+                  Experience the pinnacle of our technological advancement with PIKA1 - 
+                  a revolutionary product that embodies our commitment to cutting-edge innovation 
+                  and exceptional performance.
+                </p>
+              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -45,7 +57,7 @@ export default function Hero({ onLearnMore, onWatchDemo }: HeroProps) {
                 data-testid="button-learn-more"
                 className="bg-gradient-to-r from-chart-1 to-primary hover:from-chart-1/90 hover:to-primary/90 text-primary-foreground px-8"
               >
-                Learn More
+                Explore Our Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -56,7 +68,7 @@ export default function Hero({ onLearnMore, onWatchDemo }: HeroProps) {
                 className="bg-background/80 backdrop-blur-sm border-primary/30"
               >
                 <Play className="mr-2 h-5 w-5" />
-                Watch Demo
+                Discover PIKA1
               </Button>
             </div>
 

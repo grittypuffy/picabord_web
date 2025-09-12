@@ -43,6 +43,7 @@ export default function DivisionCard({
           {description}
         </p>
         
+{features.length > 0 && (
         <div className="space-y-2">
           <h4 className="font-medium text-sm">Key Features:</h4>
           <ul className="space-y-1">
@@ -57,6 +58,7 @@ export default function DivisionCard({
             ))}
           </ul>
         </div>
+        )}
         
         <Button 
           variant="ghost" 

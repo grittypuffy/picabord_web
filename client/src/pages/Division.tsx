@@ -33,22 +33,22 @@ export default function Division({ division, onBack }: DivisionProps) {
     },
     arclight: {
       title: "ArcLight", 
-      subtitle: "Optical & Lighting Technology",
-      description: "Revolutionary lighting and optical technology solutions that illuminate the path to next-generation applications and create smarter, more efficient environments.",
+      subtitle: "Solar Energy Solutions",
+      description: "Advanced solar energy solutions and photovoltaic technology that harness the power of the sun to create sustainable, efficient energy systems for residential, commercial, and industrial applications.",
       color: "from-primary to-chart-2",
       features: [
-        "Advanced Optical System Design",
-        "LED Technology Innovation",
-        "Smart Lighting Controls",
-        "Energy Efficiency Solutions",
-        "Adaptive Lighting Systems",
-        "Optical Component Manufacturing"
+        "High-Efficiency Solar Panels",
+        "Smart Grid Integration",
+        "Energy Storage Solutions",
+        "Solar Tracking Systems",
+        "Performance Monitoring",
+        "Sustainable Energy Management"
       ],
       applications: [
-        "Smart City Infrastructure",
-        "Architectural Lighting",
-        "Automotive Lighting",
-        "Display Technologies"
+        "Residential Solar Systems",
+        "Commercial Solar Farms",
+        "Industrial Energy Solutions",
+        "Off-Grid Power Systems"
       ]
     },
     deeptech: {

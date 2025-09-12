@@ -11,15 +11,15 @@ export default function DivisionsSection({ onDivisionSelect }: DivisionsSectionP
     {
       title: "TEC",
       description: "Advanced technical engineering solutions designed to tackle the most complex industrial challenges with precision and reliability.",
-      features: ["Precision Engineering", "System Integration", "Quality Assurance", "Technical Consulting"],
+      features: [],
       icon: Cpu,
       gradientFrom: "from-chart-1",
       gradientTo: "to-primary"
     },
     {
       title: "ArcLight",
-      description: "Revolutionary lighting and optical technology solutions that illuminate the path to next-generation applications and smart environments.",
-      features: ["Advanced Optical Systems", "LED Technology", "Smart Controls", "Energy Efficiency"],
+      description: "Advanced solar energy solutions and photovoltaic technology that harness the power of the sun to create sustainable, efficient energy systems for the future.",
+      features: [],
       icon: Lightbulb,
       gradientFrom: "from-primary",
       gradientTo: "to-chart-2"
@@ -27,7 +27,7 @@ export default function DivisionsSection({ onDivisionSelect }: DivisionsSectionP
     {
       title: "Deeptech",
       description: "Cutting-edge deep technology research and development initiatives that push the boundaries of what's possible in AI and machine learning.",
-      features: ["AI Research", "Machine Learning", "Data Analytics", "Neural Networks"],
+      features: [],
       icon: Zap,
       gradientFrom: "from-chart-2",
       gradientTo: "to-chart-1"
@@ -35,7 +35,7 @@ export default function DivisionsSection({ onDivisionSelect }: DivisionsSectionP
     {
       title: "AnnotiQ",
       description: "Intelligent annotation and data processing solutions that transform how modern enterprises handle, process, and understand their data.",
-      features: ["Data Processing", "Automated Annotation", "Quality Control", "Enterprise Integration"],
+      features: [],
       icon: Bot,
       gradientFrom: "from-chart-1",
       gradientTo: "to-chart-2"
