@@ -48,7 +48,7 @@
 
   --popover-border: 220 12% 87%;
 
-  --primary: 240 85% 15%;
+  --primary: 210 85% 45%;
 
   --primary-foreground: 220 15% 97%;
 
@@ -69,10 +69,10 @@
   --destructive-foreground: 0 0% 98%;
 
   --input: 220 20% 83%;
-  --ring: 240 85% 15%;
-  --chart-1: 150 70% 45%;
-  --chart-2: 280 60% 65%;
-  --chart-3: 240 85% 25%;
+  --ring: 210 85% 45%;
+  --chart-1: 150 80% 50%;
+  --chart-2: 320 75% 65%;
+  --chart-3: 210 85% 45%;
   --chart-4: 330 65% 40%;
   --chart-5: 60 80% 40%;
 
