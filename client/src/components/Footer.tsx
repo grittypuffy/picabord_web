@@ -9,6 +9,7 @@ export default function Footer() {
   };
 
   const divisions = [
+    { name: "PIKA", href: "#pika" },
     { name: "TEC", href: "#tec" },
     { name: "ArcLight", href: "#arclight" },
     { name: "Deeptech", href: "#deeptech" },
@@ -16,10 +17,7 @@ export default function Footer() {
   ];
 
   const company = [
-    { name: "About Us", href: "#about" },
-    { name: "Careers", href: "#careers" },
-    { name: "News", href: "#news" },
-    { name: "Investors", href: "#investors" }
+    { name: "About Us", href: "#about" }
   ];
 
   const support = [
