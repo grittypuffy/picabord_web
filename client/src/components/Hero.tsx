@@ -17,58 +17,44 @@ export default function Hero({ onLearnMore, onWatchDemo }: HeroProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-chart-1 via-primary to-chart-2 bg-clip-text text-transparent">
-                  PICABORD
-                </span>
+          <div className="text-center lg:text-left space-y-12">
+            <div className="space-y-8">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                <span className="text-foreground">Let's</span>
                 <br />
-                <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl">
-                  Built for every horizon
+                <span className="bg-gradient-to-r from-chart-1 via-primary to-chart-2 bg-clip-text text-transparent">
+                  Explore
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                We pioneer advanced technology solutions across multiple horizons - from precision engineering 
-                and solar innovation to deep tech research and intelligent data processing. 
-                Our integrated approach transforms industries and empowers the future.
-              </p>
               
-              <div className="bg-gradient-to-r from-primary/10 to-chart-1/10 rounded-2xl p-6 border border-primary/20">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-chart-1 to-primary bg-clip-text text-transparent">
-                    PIKA1
-                  </span>
-                  <span className="text-foreground"> - Our Flagship Innovation</span>
-                </h2>
-                <p className="text-muted-foreground">
-                  Experience the pinnacle of our technological advancement with PIKA1 - 
-                  a revolutionary product that embodies our commitment to cutting-edge innovation 
-                  and exceptional performance.
-                </p>
-              </div>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                Beyond boundaries.
+                <br />
+                Beyond imagination.
+                <br />
+                <span className="text-foreground">Beyond today.</span>
+              </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Button
                 size="lg"
                 onClick={onLearnMore}
                 data-testid="button-learn-more"
-                className="bg-gradient-to-r from-chart-1 to-primary hover:from-chart-1/90 hover:to-primary/90 text-primary-foreground px-8"
+                className="bg-gradient-to-r from-chart-1 to-primary hover:from-chart-1/90 hover:to-primary/90 text-primary-foreground px-12 py-4 text-lg rounded-xl"
               >
-                Explore Our Solutions
-                <ArrowRight className="ml-2 h-5 w-5" />
+                Begin Journey
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 onClick={onWatchDemo}
                 data-testid="button-watch-demo"
-                className="bg-background/80 backdrop-blur-sm border-primary/30"
+                className="bg-background/80 backdrop-blur-sm border-primary/30 px-12 py-4 text-lg rounded-xl"
               >
-                <Play className="mr-2 h-5 w-5" />
-                Discover PIKA1
+                Discover More
               </Button>
             </div>
 
