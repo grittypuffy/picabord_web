@@ -105,6 +105,9 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-2">
+              <div className="text-sm font-medium text-foreground mb-3">
+                PICABORD Technologies (Pvt.) Ltd.
+              </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
                 <span>contact@picabord.com</span>
