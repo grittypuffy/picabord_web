@@ -18,19 +18,18 @@ export default function Hero({ onLearnMore, onWatchDemo }: HeroProps) {
           <div className="space-y-12">
             <div className="space-y-8">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-                <span className="text-foreground">Let's</span>
-                <br />
+                <span className="text-foreground">Let's </span>
                 <span className="bg-gradient-to-r from-chart-1 via-chart-2 to-chart-3 bg-clip-text text-transparent">
                   Explore
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
-                Beyond boundaries.
+                Beyond boundaries
                 <br />
-                Beyond imagination.
+                Beyond imagination
                 <br />
-                <span className="text-foreground">Beyond today.</span>
+                <span className="text-foreground">Beyond horizons.</span>
               </p>
             </div>
 
