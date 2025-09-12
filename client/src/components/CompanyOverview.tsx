@@ -136,7 +136,7 @@ export default function CompanyOverview({ onExploreMore }: CompanyOverviewProps)
             <div className="grid grid-cols-2 gap-6 mb-8">
               {achievements.map((achievement, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">
+                  <div className="text-3xl font-bold text-foreground mb-1">
                     {achievement.number}
                   </div>
                   <div className="text-sm text-muted-foreground">
