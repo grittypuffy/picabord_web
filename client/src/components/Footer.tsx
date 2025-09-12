@@ -1,17 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Mail, MapPin, Phone, Linkedin, Twitter, Github } from "lucide-react";
-import { useState } from "react";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(`Newsletter subscription: ${email}`);
-    setEmail("");
-  };
 
   const handleSocialClick = (platform: string) => {
     console.log(`${platform} clicked`);
@@ -55,28 +46,6 @@ export default function Footer() {
               </p>
             </div>
             
-            {/* Newsletter */}
-            <div>
-              <h4 className="font-semibold mb-3">Stay Updated</h4>
-              <form onSubmit={handleSubscribe} className="space-y-2">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  data-testid="input-newsletter"
-                  className="bg-background"
-                />
-                <Button 
-                  type="submit" 
-                  size="sm" 
-                  className="w-full bg-gradient-to-r from-chart-1 to-primary"
-                  data-testid="button-subscribe"
-                >
-                  Subscribe
-                </Button>
-              </form>
-            </div>
           </div>
 
           {/* Divisions */}
