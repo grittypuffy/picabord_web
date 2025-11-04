@@ -16,8 +16,8 @@ export default function Home({ onSectionChange }: HomeProps) {
   };
 
   const handleExploreMore = () => {
-    onSectionChange("tec");
-    console.log("Navigating to divisions");
+    onSectionChange("about");
+    console.log("Navigating to about");
   };
 
   return (

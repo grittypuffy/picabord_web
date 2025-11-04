@@ -115,3 +115,25 @@ This document outlines the requirements for improving the design and user experi
 2. WHEN the User navigates using keyboard only, THE Website SHALL provide visible focus indicators on all interactive elements
 3. THE Website SHALL include appropriate ARIA labels for all icon-only buttons and interactive elements
 4. WHEN the User uses a screen reader, THE Website SHALL provide descriptive alt text for all meaningful images
+
+### Requirement 10
+
+**User Story:** As a user, I want to see custom-designed SVG icons with accent colors throughout the website, so that the visual identity is unique and cohesive
+
+#### Acceptance Criteria
+
+1. THE Website SHALL replace all lucide-react icons in card components with custom-designed SVG icons
+2. THE Website SHALL apply accent colors from the aurora theme palette (chart-1, chart-2, primary) to custom SVG icons
+3. THE Website SHALL ensure custom SVG icons follow a consistent design language with geometric shapes and gradients
+4. THE Website SHALL maintain icon accessibility with appropriate aria-label attributes and semantic markup
+
+### Requirement 11
+
+**User Story:** As a user, I want to see the PICABORD company logo in the navigation bar, so that I can easily identify the brand
+
+#### Acceptance Criteria
+
+1. WHEN the User views the navigation bar, THE Website SHALL display the PICABORD logo image on the leftmost side
+2. THE Website SHALL position the logo next to the "PICABORD" text in the navigation component
+3. THE Website SHALL ensure the logo scales appropriately for mobile and desktop viewports
+4. THE Website SHALL use the logo file located at public/PIC-A-BOARD_logo_w.png with appropriate alt text

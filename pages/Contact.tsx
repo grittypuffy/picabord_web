@@ -221,39 +221,42 @@ export default function Contact({ onBack }: ContactProps) {
             </div>
           </div>
 
-          {/* Additional Information */}
+          {/* Custom Software CTA */}
           <div 
             ref={ctaAnimation.ref as React.RefObject<HTMLDivElement>}
-            className={`mt-16 text-center transition-all duration-700 ${
+            className={`mt-16 transition-all duration-700 ${
               ctaAnimation.isVisible 
                 ? 'opacity-100 scale-100' 
                 : 'opacity-0 scale-95'
             }`}
           >
-            <Card className="p-8 bg-gradient-to-r from-primary/5 to-chart-1/5 border-primary/20">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Whether you're interested in our PIKA1 product, need consulting for a specific 
-                  division, or want to explore partnership opportunities, we're here to help.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Card className="p-8 sm:p-12 bg-gradient-to-br from-chart-1/10 via-primary/5 to-chart-2/10 border-primary/20 hover-elevate relative overflow-hidden">
+              {/* Animated background elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-chart-1/20 to-transparent rounded-full blur-3xl animate-pulse" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-chart-2/20 to-transparent rounded-full blur-3xl animate-pulse animation-delay-200" />
+              
+              <CardContent className="p-0 relative z-10">
+                <div className="text-center max-w-2xl mx-auto space-y-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-chart-1 to-primary rounded-2xl mx-auto flex items-center justify-center animate-bounce-slow">
+                    <Send className="w-8 h-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold">
+                    Want Custom Software for Your Company?
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    We build tailored software solutions that perfectly fit your business needs. 
+                    From concept to deployment, we're with you every step of the way.
+                  </p>
                   <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-chart-1 to-primary px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
-                    onClick={() => console.log("Schedule consultation")}
-                    data-testid="button-schedule-consultation"
-                  >
-                    Schedule Consultation
-                  </Button>
-                  <Button 
-                    variant="outline" 
                     size="lg"
-                    className="px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
-                    onClick={() => console.log("Download brochure")}
-                    data-testid="button-download-brochure"
+                    className="bg-gradient-to-r from-chart-1 to-primary text-primary-foreground px-8 sm:px-12 min-h-[44px] hover-elevate focus-visible-ring"
+                    onClick={() => {
+                      // Scroll to form
+                      const form = document.querySelector('form');
+                      form?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }}
                   >
-                    Download Brochure
+                    Reach Out to Us
                   </Button>
                 </div>
               </CardContent>

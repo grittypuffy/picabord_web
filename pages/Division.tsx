@@ -1,7 +1,10 @@
+'use client'
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, CheckCircle, Zap, Globe } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 // Temporary placeholder path until Next.js Image component is implemented
 const backgroundImage = "/attached_assets/generated_images/Software_development_workspace_background_f8ff4622.png";
 
@@ -11,9 +14,14 @@ interface DivisionProps {
 }
 
 export default function Division({ division, onBack }: DivisionProps) {
+  // Scroll animations for different sections
+  const headerAnimation = useScrollAnimation({ threshold: 0.2 });
+  const productsHeaderAnimation = useScrollAnimation({ threshold: 0.2 });
+  const productsAnimation = useScrollAnimation({ threshold: 0.1 });
+
   const divisionData: Record<string, any> = {
     tec: {
-      title: "TEC",
+      title: "The Editor's Choice",
       subtitle: "Software Product Development & Engineering",
       description: "We specialize in developing innovative software products that transform how businesses operate. Our expertise spans across web applications, mobile solutions, enterprise software, and cloud-based platforms designed to streamline workflows, enhance productivity, and deliver exceptional user experiences.",
       color: "from-chart-1 to-primary",
@@ -31,7 +39,7 @@ export default function Division({ division, onBack }: DivisionProps) {
       ],
       features: [
         "Modern Software Architecture",
-        "Real-time Data Synchronization", 
+        "Real-time Data Synchronization",
         "Advanced User Analytics",
         "Enterprise-Grade Security",
         "Comprehensive API Ecosystem",
@@ -53,9 +61,9 @@ export default function Division({ division, onBack }: DivisionProps) {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <img 
-            src={backgroundImage} 
-            alt="Background" 
+          <img
+            src={backgroundImage}
+            alt="Background"
             className="w-full h-full object-cover"
           />
         </div>
@@ -69,8 +77,14 @@ export default function Division({ division, onBack }: DivisionProps) {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Button>
-          
-          <div className="text-center space-y-6">
+
+          <div
+            ref={headerAnimation.ref as React.RefObject<HTMLDivElement>}
+            className={`text-center space-y-6 transition-all duration-700 ${headerAnimation.isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+              }`}
+          >
             <Badge variant="outline" className="border-primary/30 text-primary">
               Division
             </Badge>
@@ -91,16 +105,32 @@ export default function Division({ division, onBack }: DivisionProps) {
           {data.products ? (
             /* Product showcase for TEC */
             <div className="space-y-12">
-              <div className="text-center">
+              <div
+                ref={productsHeaderAnimation.ref as React.RefObject<HTMLDivElement>}
+                className={`text-center transition-all duration-700 ${productsHeaderAnimation.isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+                  }`}
+              >
                 <h2 className="text-3xl font-bold mb-4">Our Software Products</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Innovative software solutions currently in development
                 </p>
               </div>
-              
-              <div className="grid lg:grid-cols-2 gap-8">
+
+              <div
+                ref={productsAnimation.ref as React.RefObject<HTMLDivElement>}
+                className="grid lg:grid-cols-2 gap-8"
+              >
                 {data.products.map((product: any, index: number) => (
-                  <Card key={index} className="p-8 hover-elevate">
+                  <Card
+                    key={index}
+                    className={`p-8 hover-elevate transition-all duration-700 ${productsAnimation.isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                      }`}
+                    style={{ transitionDelay: `${index * 150}ms` }}
+                  >
                     <CardHeader className="pb-6">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl">{product.name}</CardTitle>
@@ -118,52 +148,7 @@ export default function Division({ division, onBack }: DivisionProps) {
                 ))}
               </div>
 
-              {/* Technical Features for TEC */}
-              <div className="grid lg:grid-cols-2 gap-12 mt-16">
-                <Card className="p-8 hover-elevate">
-                  <CardHeader className="pb-6">
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-10 h-10 bg-gradient-to-r ${data.color} rounded-lg flex items-center justify-center`}>
-                        <Zap className="w-5 h-5 text-primary-foreground" />
-                      </div>
-                      <CardTitle>Technical Features</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="space-y-3">
-                      {data.features.map((feature: string, index: number) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-chart-1 flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
 
-                <Card className="p-8 hover-elevate">
-                  <CardHeader className="pb-6">
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-10 h-10 bg-gradient-to-r ${data.color} rounded-lg flex items-center justify-center`}>
-                        <Globe className="w-5 h-5 text-primary-foreground" />
-                      </div>
-                      <CardTitle>Applications</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="grid gap-4">
-                      {data.applications.map((app: string, index: number) => (
-                        <div 
-                          key={index}
-                          className="p-4 bg-muted/50 rounded-lg hover-elevate transition-all duration-200"
-                        >
-                          <span className="font-medium">{app}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           ) : (
             /* Simple layout for other divisions - description only */

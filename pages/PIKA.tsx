@@ -97,13 +97,6 @@ export default function PIKA({ onBack }: PIKAProps) {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  size="lg"
-                  className="bg-gradient-to-r from-chart-1 to-primary text-primary-foreground px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
-                  data-testid="button-request-sample"
-                >
-                  Request Development Kit
-                </Button>
-                <Button 
                   variant="outline" 
                   size="lg"
                   className="border-primary/30 px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
@@ -270,13 +263,6 @@ export default function PIKA({ onBack }: PIKAProps) {
             Get started with the PIKA-1 development kit and bring your ideas to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-chart-1 to-primary text-primary-foreground px-8 sm:px-12 min-h-[44px] hover-elevate focus-visible-ring"
-              data-testid="button-get-started"
-            >
-              Get Development Kit
-            </Button>
             <Button 
               variant="outline" 
               size="lg"

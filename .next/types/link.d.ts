@@ -38,8 +38,12 @@ declare namespace __next_route_internal_types__ {
     | `/Division`
     | `/Home`
     | `/PIKA`
+    | `/about`
     | `/api/users`
+    | `/contact`
     | `/not-found`
+    | `/pika`
+    | `/tec`
   type DynamicRoutes<T extends string = string> = 
     | `/api/users/${SafeSlug<T>}`
 

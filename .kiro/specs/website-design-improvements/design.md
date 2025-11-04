@@ -81,6 +81,7 @@ function useParallax(options?: ParallaxOptions): {
 - Enhance active state highlighting with animated underline
 - Improve mobile menu animation with slide-in effect
 - Add keyboard navigation support with focus management
+- Add PICABORD company logo on the leftmost side
 
 **New Features**:
 ```typescript
@@ -90,6 +91,13 @@ interface NavigationProps {
   enableSmoothScroll?: boolean; // New prop
 }
 ```
+
+**Logo Integration**:
+- Display logo image from `public/PIC-A-BOARD_logo_w.png`
+- Position logo to the left of "PICABORD" text
+- Scale appropriately: 32px height on desktop, 24px on mobile
+- Add proper alt text for accessibility
+- Ensure logo works in both light and dark themes
 
 ### 3. Form Enhancement System
 
@@ -196,7 +204,101 @@ xl: 1280px  /* Desktops */
 - **Navigation**: Hamburger menu below md breakpoint
 - **Footer**: Stack footer sections vertically on mobile
 
-### 6. Accessibility Enhancements
+### 6. Custom SVG Icon System
+
+**Purpose**: Replace all lucide-react icons with custom-designed SVG icons that match the PICABORD brand identity
+
+**Design Principles**:
+- Geometric shapes with clean lines
+- Use accent colors from aurora theme (chart-1, chart-2, primary)
+- Consistent stroke width and sizing
+- Support for gradients and multi-color designs
+- Inspired by modern minimalist icon design
+
+**Icon Components Structure**:
+
+```typescript
+interface CustomIconProps {
+  className?: string;
+  size?: number;
+  colors?: {
+    primary?: string;
+    secondary?: string;
+  };
+}
+
+// Example: Custom Target Icon
+function TargetIcon({ className, size = 24, colors }: CustomIconProps) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none"
+      className={className}
+    >
+      {/* Custom SVG paths with gradients */}
+    </svg>
+  );
+}
+```
+
+**Icons to Create**:
+
+Based on current usage in components:
+1. **Target Icon** - For mission/precision (CompanyOverview, About)
+2. **Zap Icon** - For innovation/energy (CompanyOverview, PIKA)
+3. **Users Icon** - For collaboration/team (CompanyOverview, About)
+4. **Globe Icon** - For global impact (CompanyOverview, About)
+5. **Cpu Icon** - For embedded systems (CompanyOverview, PIKA)
+6. **Brain Icon** - For AI/intelligence (CompanyOverview)
+7. **Rocket Icon** - For future/innovation (CompanyOverview)
+8. **Shield Icon** - For security (PIKA)
+9. **Wifi Icon** - For connectivity (PIKA)
+10. **Database Icon** - For storage (PIKA)
+11. **Thermometer Icon** - For industrial grade (PIKA)
+12. **Award Icon** - For values/excellence (About)
+
+**Implementation Approach**:
+- Create separate component file: `components/icons/custom-icons.tsx`
+- Export all custom icons from single file
+- Use Tailwind classes for colors via className prop
+- Support gradient fills using SVG linearGradient definitions
+- Ensure icons are accessible with title and desc elements
+
+**Example Custom Icon Design**:
+
+```typescript
+export function CustomTargetIcon({ className, size = 24 }: CustomIconProps) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      role="img"
+      aria-label="Target icon"
+    >
+      <defs>
+        <linearGradient id="targetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--chart-1))" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" />
+        </linearGradient>
+      </defs>
+      {/* Outer circle */}
+      <circle cx="12" cy="12" r="10" stroke="url(#targetGradient)" strokeWidth="2" />
+      {/* Middle circle */}
+      <circle cx="12" cy="12" r="6" stroke="url(#targetGradient)" strokeWidth="2" />
+      {/* Center dot */}
+      <circle cx="12" cy="12" r="2" fill="url(#targetGradient)" />
+    </svg>
+  );
+}
+```
+
+### 7. Accessibility Enhancements
 
 #### Focus Management
 
@@ -218,6 +320,7 @@ xl: 1280px  /* Desktops */
 - Add `aria-current="page"` to active navigation items
 - Add `aria-live` regions for dynamic content updates
 - Add `role` attributes where semantic HTML isn't sufficient
+- Add title and desc elements to custom SVG icons
 
 #### Color Contrast
 
@@ -225,6 +328,7 @@ xl: 1280px  /* Desktops */
 - Ensure all text meets WCAG AA standards (4.5:1 for normal, 3:1 for large)
 - Test both light and dark themes
 - Adjust muted-foreground colors if needed
+- Ensure custom icon colors have sufficient contrast
 
 ## Data Models
 

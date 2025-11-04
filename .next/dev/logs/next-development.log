@@ -1,55 +1,45 @@
-[00:00:02.484] Server  LOG      ✓ Ready in 1582ms
-[00:00:18.342] Server  LOG      ○ Compiling / ...
-[00:00:25.114] Server  WARN     ⚠ Cross origin request detected from learners-flag-thereby-computed.trycloudflare.com to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:25.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:43.369] Browser LOG     Navigating to divisions
-[00:03:51.338] Browser LOG     Switched to light mode
-[00:04:44.293] Server  LOG      ✓ Compiled in 188ms
-[00:04:57.729] Browser LOG     Switched to dark mode
-[00:05:24.465] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:24.465] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="dm_sans_36b8ebf6-module__Wq6EMa__variable outfit_bde8b107-module__Q838la__varia..."
--                           monica-id="ofpnmcalabcbjgholdjcjblkibolbppb"
--                           monica-version="7.9.8"
-                          >
-                  ...
-
-[00:09:17.643] Server  LOG      ✓ Compiled in 142ms
-[00:09:32.643] Server  LOG      ✓ Compiled in 679ms
-[00:13:52.233] Browser LOG     Navigate to About Us
-[00:13:53.370] Browser LOG     Navigate to PIKA
-[00:13:53.797] Browser LOG     Navigate to TEC
-[00:20:21.525] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.720] Server  LOG      ✓ Ready in 1141ms
+[00:00:09.798] Server  LOG      ○ Compiling / ...
+[00:00:12.011] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.686] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.494] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:28.100] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:49.499] Server  LOG      ✓ Compiled in 105ms
+[00:04:49.162] Server  LOG      ✓ Compiled in 97ms
+[00:10:52.679] Server  LOG      ✓ Compiled in 267ms
+[01:15:51.735] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:18:35.806] Server  LOG      ✓ Compiled in 148ms
+[01:18:41.917] Server  LOG      ✓ Compiled in 164ms
+[01:18:43.032] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:18:45.559] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:18:45.561] Server  LOG      ✓ Compiled in 241ms
+[01:18:46.025] Server  ERROR    ⨯ ReferenceError: isWorkMenuOpen is not defined
+[01:18:46.076] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:18:46.877] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:48.027] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:18:51.266] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:18:51.655] Server  ERROR    ⨯ ReferenceError: isWorkMenuOpen is not defined
+[01:18:51.681] Server  LOG      ✓ Compiled in 138ms
+[01:18:52.148] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:52.860] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:18:52.861] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:18:53.253] Server  ERROR    ⨯ ReferenceError: isWorkMenuOpen is not defined
+[01:18:53.276] Server  LOG      ✓ Compiled in 149ms
+[01:18:53.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:54.036] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:18:56.656] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:18:56.662] Server  LOG      ✓ Compiled in 202ms
+[01:18:57.110] Server  ERROR    ⨯ ReferenceError: isWorkMenuOpen is not defined
+[01:18:57.498] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:58.037] Browser ERROR   uncaughtError: ReferenceError: isWorkMenuOpen is not defined
+[01:19:01.414] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:19:01.880] Server  LOG      ✓ Compiled in 183ms
+[01:19:02.260] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:05.655] Browser ERROR   uncaughtError: ReferenceError: solutionsItems is not defined
+[01:19:37.511] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:19:37.533] Server  LOG      ✓ Compiled in 202ms
+[01:19:38.416] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:48.503] Server  LOG      ✓ Compiled in 237ms
+[01:20:55.837] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:21:00.897] Server  LOG      ✓ Compiled in 124ms

@@ -374,16 +374,93 @@
     - Fix any accessibility issues found
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 20. Final polish and documentation
-  - [ ] 20.1 Fine-tune animation timings
+- [x] 20. Create custom SVG icon system
+
+
+
+
+  - [ ] 20.1 Create custom icon components file
+    - Create components/icons/custom-icons.tsx
+    - Set up base icon component structure with props interface
+    - Add SVG gradient definitions for aurora theme colors
+
+    - _Requirements: 10.1, 10.2, 10.3_
+  
+  - [ ] 20.2 Design and implement custom icons
+    - Create CustomTargetIcon with geometric design and gradients
+    - Create CustomZapIcon with energy/lightning theme
+    - Create CustomUsersIcon with collaboration theme
+    - Create CustomGlobeIcon with global connectivity theme
+    - Create CustomCpuIcon with chip/processor theme
+    - Create CustomBrainIcon with AI/intelligence theme
+    - Create CustomRocketIcon with innovation/future theme
+    - Create CustomShieldIcon with security theme
+    - Create CustomWifiIcon with connectivity theme
+    - Create CustomDatabaseIcon with storage theme
+    - Create CustomThermometerIcon with industrial theme
+    - Create CustomAwardIcon with excellence theme
+    - Ensure all icons use accent colors from aurora theme
+
+
+    - Add accessibility attributes (role, aria-label, title, desc)
+    - _Requirements: 10.1, 10.2, 10.3, 10.4_
+  
+  - [ ] 20.3 Replace lucide-react icons in CompanyOverview
+    - Replace Target, Zap, Users, Globe icons with custom versions
+
+
+    - Replace Cpu, Brain, Rocket icons with custom versions
+    - Update icon sizing and colors to match design
+    - Test visual consistency across the component
+    - _Requirements: 10.1, 10.2_
+
+  
+
+  - [ ] 20.4 Replace lucide-react icons in PIKA page
+    - Replace Cpu, Zap, Shield, Wifi, Database, Thermometer icons with custom versions
+
+
+
+
+
+    - Update icon colors to use aurora theme gradients
+    - Ensure icons scale properly in cards
+    - _Requirements: 10.1, 10.2_
+  
+  - [ ] 20.5 Replace lucide-react icons in About page
+    - Replace Award, Users, Globe, Target icons with custom versions
+
+    - Apply consistent styling across all icon instances
+    - Test icon appearance in both light and dark themes
+    - _Requirements: 10.1, 10.2_
+
+- [ ] 21. Add company logo to navigation
+  - [ ] 21.1 Integrate logo image in Navigation component
+    - Add Image component from next/image to Navigation.tsx
+    - Load logo from public/PIC-A-BOARD_logo_w.png
+    - Position logo on leftmost side before PICABORD text
+    - Set logo height to 32px on desktop, 24px on mobile
+    - Add proper alt text: "PICABORD Logo"
+    - _Requirements: 11.1, 11.2, 11.3, 11.4_
+  
+  - [ ] 21.2 Style and optimize logo display
+    - Ensure logo scales responsively across breakpoints
+    - Add appropriate spacing between logo and text
+    - Test logo visibility in both light and dark themes
+    - Optimize image loading with next/image priority prop
+    - _Requirements: 11.1, 11.3_
+
+- [ ] 22. Final polish and documentation
+  - [ ] 22.1 Fine-tune animation timings
     - Review all animation durations for consistency
     - Adjust timings based on user feedback
     - Ensure animations feel natural and smooth
     - _Requirements: 1.1, 1.2, 1.3_
   
-  - [ ] 20.2 Update documentation
+  - [ ] 22.2 Update documentation
     - Update design_guidelines.md with new patterns
     - Document animation standards and usage
     - Add accessibility guidelines
+    - Document custom icon usage and design principles
     - Create component usage examples
     - _Requirements: All_

@@ -3,7 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Target, Zap, Users, Globe, Cpu, Brain, Rocket } from "lucide-react";
+import Link from "next/link";
+import { Target, Zap, Users, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface CompanyOverviewProps {
@@ -43,29 +44,7 @@ export default function CompanyOverview({ onExploreMore }: CompanyOverviewProps)
   return (
     <section className="py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div 
-          ref={headerAnimation.ref as React.RefObject<HTMLDivElement>}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerAnimation.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <Badge variant="outline" className="mb-4 border-primary/30 text-primary font-picabord">
-            About PICABORD
-          </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Leading the Future of{" "}
-            <span className="text-primary">
-              Technology
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            <span className="font-picabord">PICABORD</span> stands at the forefront of technological innovation, developing 
-            advanced solutions that shape industries and improve lives across the globe.
-          </p>
-        </div>
+
 
         {/* Mission & Vision Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
@@ -146,69 +125,37 @@ export default function CompanyOverview({ onExploreMore }: CompanyOverviewProps)
           ))}
         </div>
 
-        {/* Tomorrow's Technology */}
+        {/* Tomorrow's Technology - Smaller Box */}
         <div 
           ref={technologyAnimation.ref as React.RefObject<HTMLDivElement>}
-          className={`text-center max-w-4xl mx-auto transition-all duration-700 ${
+          className={`text-center max-w-3xl mx-auto transition-all duration-700 ${
             technologyAnimation.isVisible 
               ? 'opacity-100 scale-100' 
               : 'opacity-0 scale-95'
           }`}
         >
-          <div className="bg-gradient-to-r from-chart-1/10 to-chart-2/10 rounded-3xl p-6 sm:p-8 md:p-12 border border-chart-1/20">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-6">
+          <div className="bg-gradient-to-r from-chart-1/10 to-chart-2/10 rounded-2xl p-6 sm:p-8 border border-chart-1/20">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">
               Building Tomorrow's{" "}
               <span className="text-primary">
                 Technology
               </span>
             </h3>
             
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
               We're developing products for a better tomorrow, spanning the entire spectrum 
               of innovation. From precision embedded systems that power the next generation 
-              of devices to advanced software solutions that transform how businesses operate 
-              and interact with technology.
+              of devices to advanced software solutions that transform how businesses operate.
             </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-chart-1/20 to-chart-2/20 rounded-2xl mx-auto flex items-center justify-center">
-                  <Cpu className="w-8 h-8 text-chart-1" />
-                </div>
-                <h4 className="font-semibold">Embedded Systems</h4>
-                <p className="text-sm text-muted-foreground">
-                  Precision-engineered solutions for tomorrow's connected world
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-chart-1/20 to-chart-2/20 rounded-2xl mx-auto flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-chart-2" />
-                </div>
-                <h4 className="font-semibold">Software Innovation</h4>
-                <p className="text-sm text-muted-foreground">
-                  Advanced software solutions pushing the boundaries of possibility
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-chart-1/20 to-chart-2/20 rounded-2xl mx-auto flex items-center justify-center">
-                  <Rocket className="w-8 h-8 text-chart-3" />
-                </div>
-                <h4 className="font-semibold">Future Forward</h4>
-                <p className="text-sm text-muted-foreground">
-                  Innovation that transforms ideas into reality for a better tomorrow
-                </p>
-              </div>
-            </div>
             
-            <Button 
-              onClick={onExploreMore}
-              data-testid="button-explore-divisions"
-              className="bg-gradient-to-r from-chart-1 to-chart-2 text-white px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
-            >
-              Explore Our Divisions
-            </Button>
+            <Link href={"/about" as any}>
+              <Button 
+                data-testid="button-explore-divisions"
+                className="bg-gradient-to-r from-chart-1 to-chart-2 text-white px-6 sm:px-8 min-h-[44px] hover-elevate focus-visible-ring"
+              >
+                Learn More About Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
