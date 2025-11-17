@@ -106,3 +106,5 @@ Quick commands:
 # Run with docker-compose
 docker-compose -f docker-compose.rpi.yml up -d
 ```
+
+Note: This repository uses React 18.x to ensure compatibility with `framer-motion` and other peer-dependent libraries. If you notice a peer dependency install error, run `npm install` to update the lockfile and ensure your environment uses Node 18+.

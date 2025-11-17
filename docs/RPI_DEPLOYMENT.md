@@ -83,6 +83,8 @@ docker build -f Dockerfile.static -t picabord-static:local .
 ## Troubleshooting
 - If you see an architecture mismatch error when running an image, build specifically for the Pi's architecture with the `--platform` option and use `--load` to load the correct binary into your Docker daemon.
 
+- If you previously saw an `ERESOLVE` issue in CI about `framer-motion` requiring `react^18` while the project used `react@19`, we've implemented the recommended long-term solution: the project now uses `react@^18` / `react-dom@^18`. If you still encounter peer conflict issues after updating your lockfile, re-run `npm install` locally to update the lockfile and then retry in CI.
+
 
 If you need help adapting this workflow further or publishing to Docker Hub instead of GHCR, say the word and I can update the workflow and docs.
 

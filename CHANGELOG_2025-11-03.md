@@ -9,6 +9,7 @@ Comprehensive design system overhaul and feature implementation for the PICABORD
 
 ### 1. ✅ Project Foundation & Dependencies
 - Verified all required dependencies (framer-motion, react-hook-form, zod, @hookform/resolvers, @radix-ui/react-toast)
+ - Downgraded `react` and `react-dom` to `^18.3.1` to resolve peer dependency conflicts with `framer-motion` and related packages.
 - Set up testing infrastructure with Vitest and React Testing Library
 - Configured test scripts in package.json
 
