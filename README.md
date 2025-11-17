@@ -25,6 +25,7 @@ Advanced Technology Solutions platform built with Next.js, featuring PIKA1 produ
 npm install
 ```
 
+
 ### Development
 
 ```bash
@@ -48,7 +49,7 @@ npm run lint
 
 ## Project Structure
 
-```
+```text
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout
 │   ├── page.tsx           # Home page
@@ -91,3 +92,17 @@ This project was migrated from Vite + React + Express to Next.js. See [MIGRATION
 ## License
 
 MIT
+
+## Raspberry Pi / Docker Hosting
+
+This repository includes a multi-architecture `Dockerfile` and a GitHub Actions workflow that builds and publishes images to GitHub Container Registry (GHCR). See `docs/RPI_DEPLOYMENT.md` for full instructions on building, testing, and running the container on Raspberry Pi devices (arm64 and armv7) as well as on amd64.
+
+Quick commands:
+
+```bash
+# Build & push a multi-arch image using the included script
+./scripts/build-rpi.sh ghcr.io/thatdeveloperoverthere/picabord-web:latest
+
+# Run with docker-compose
+docker-compose -f docker-compose.rpi.yml up -d
+```
