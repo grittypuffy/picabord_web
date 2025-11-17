@@ -2,7 +2,8 @@ name: Build & Push Docker Image (multi-arch)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, design-improvements-nov-2025 ]
+  workflow_dispatch: {}
 
 jobs:
   build-and-push:

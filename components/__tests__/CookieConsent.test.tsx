@@ -58,8 +58,8 @@ describe('CookieConsent', () => {
   it('should render banner if user has not responded', async () => {
     render(<CookieConsent />);
     
-    // Fast-forward past the initial delay
-    vi.advanceTimersByTime(1500);
+    // Fast-forward past the initial delay (async to work with modern fake timers)
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -71,7 +71,7 @@ describe('CookieConsent', () => {
   it('should have accessible labels and ARIA attributes', async () => {
     render(<CookieConsent />);
     
-    vi.advanceTimersByTime(1500);
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       const dialog = screen.getByRole('dialog');
@@ -84,7 +84,7 @@ describe('CookieConsent', () => {
   it('should store consent and reload when accept is clicked', async () => {
     render(<CookieConsent />);
     
-    vi.advanceTimersByTime(1500);
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -101,7 +101,7 @@ describe('CookieConsent', () => {
   it('should store decline and close banner when decline is clicked', async () => {
     render(<CookieConsent />);
     
-    vi.advanceTimersByTime(1500);
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -124,7 +124,7 @@ describe('CookieConsent', () => {
   it('should close banner when X button is clicked', async () => {
     render(<CookieConsent />);
     
-    vi.advanceTimersByTime(1500);
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -140,7 +140,7 @@ describe('CookieConsent', () => {
   it('should have a link to privacy policy', async () => {
     render(<CookieConsent />);
     
-    vi.advanceTimersByTime(1500);
+    await vi.advanceTimersByTimeAsync(1500);
     
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toBeInTheDocument();
