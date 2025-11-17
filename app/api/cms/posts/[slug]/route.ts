@@ -5,6 +5,8 @@ import * as path from 'path';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
+type RouteContext = { params: Promise<{ slug: string }> };
+
 async function checkAuth() {
 	const cookieStore = await cookies();
 	const session = cookieStore.get('cms-session');
@@ -84,14 +86,15 @@ function escapeQuotes(value: string) {
 	return value.replace(/\r?\n/g, ' ').replace(/"/g, '\\"');
 }
 
-export async function GET(_: NextRequest, { params }: { params: { slug: string } }) {
+export async function GET(_: NextRequest, { params }: RouteContext) {
 	const isAuth = await checkAuth();
 	if (!isAuth) {
 		return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
 	try {
-		const match = await findPostBySlug(params.slug);
+		const { slug } = await params;
+		const match = await findPostBySlug(slug);
 		if (!match) {
 			return NextResponse.json({ error: 'Post not found' }, { status: 404 });
 		}
@@ -102,14 +105,15 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 	}
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { slug: string } }) {
+export async function PUT(request: NextRequest, { params }: RouteContext) {
 	const isAuth = await checkAuth();
 	if (!isAuth) {
 		return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
 	try {
-		const match = await findPostBySlug(params.slug);
+		const { slug: paramSlug } = await params;
+		const match = await findPostBySlug(paramSlug);
 		if (!match) {
 			return NextResponse.json({ error: 'Post not found' }, { status: 404 });
 		}
@@ -134,14 +138,15 @@ export async function PUT(request: NextRequest, { params }: { params: { slug: st
 	}
 }
 
-export async function DELETE(_: NextRequest, { params }: { params: { slug: string } }) {
+export async function DELETE(_: NextRequest, { params }: RouteContext) {
 	const isAuth = await checkAuth();
 	if (!isAuth) {
 		return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
 	try {
-		const match = await findPostBySlug(params.slug);
+		const { slug } = await params;
+		const match = await findPostBySlug(slug);
 		if (!match) {
 			return NextResponse.json({ error: 'Post not found' }, { status: 404 });
 		}
