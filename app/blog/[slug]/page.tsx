@@ -5,13 +5,17 @@ import Image from 'next/image';
 import { getAllPosts, getPostBySlug } from '@/lib/blog';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User, ChevronRight } from 'lucide-react';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { useMDXComponents } from '@/components/mdx-components';
+import { evaluate } from '@mdx-js/mdx';
+import * as runtime from 'react/jsx-runtime';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { TableOfContents } from '@/components/TableOfContents';
 import { ReadingProgress } from '@/components/ReadingProgress';
 import { SocialShare } from '@/components/SocialShare';
 import RelatedArticles from '@/components/RelatedArticles';
 import BlogPostTracker from '@/components/BlogPostTracker';
+import { useMDXComponents } from '@/mdx-components';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -104,6 +108,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Get MDX components
   const components = useMDXComponents({});
+
+  // Compile MDX content
+  const { default: MDXContent } = await evaluate(content, {
+    ...runtime,
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+    development: false,
+  } as any);
 
   // Generate JSON-LD structured data for SEO
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://picabord.space';
@@ -257,7 +269,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12 xl:gap-16">
             {/* Main Content */}
             <div className="mdx-content max-w-4xl">
-              <MDXRemote source={content} components={components} />
+              <MDXContent components={components} />
             </div>
 
             {/* Table of Contents - Desktop Sidebar */}

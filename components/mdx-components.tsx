@@ -1,5 +1,4 @@
 import type { MDXComponents } from 'mdx/types'
-import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
 
 // Custom components for MDX content
@@ -200,35 +199,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // Images - responsive with Next.js optimization
     img: (props) => {
-      const { src, alt, width, height, ...rest } = props as any
+      const { src, alt } = props as any
       
-      // Handle external images or images without dimensions
-      if (!width || !height) {
-        return (
-          <span className="block my-8 rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src={src || ''}
-              alt={alt || ''}
-              width={1200}
-              height={675}
-              className="w-full h-auto object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-              {...rest}
-            />
-          </span>
-        )
-      }
-      
+      // Use standard img tag for MDX to avoid React hooks during SSR
+      // eslint-disable-next-line @next/next/no-img-element
       return (
         <span className="block my-8 rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src={src}
+          <img
+            src={src || ''}
             alt={alt || ''}
-            width={width}
-            height={height}
             className="w-full h-auto object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-            {...rest}
+            loading="lazy"
           />
         </span>
       )
