@@ -6,6 +6,11 @@ import * as path from 'path';
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
 type RouteContext = { params: Promise<{ slug: string }> };
+type PostData = Record<string, string> & {
+	id: string;
+	slug: string;
+	content: string;
+};
 
 async function checkAuth() {
 	const cookieStore = await cookies();
@@ -38,7 +43,7 @@ function parseFrontmatter(content: string) {
 	return { frontmatter, body };
 }
 
-async function readPostFile(filePath: string) {
+async function readPostFile(filePath: string): Promise<PostData> {
 	const raw = await fs.promises.readFile(filePath, 'utf-8');
 	const { frontmatter, body } = parseFrontmatter(raw);
 	const id = frontmatter.id || path.basename(filePath, '.mdx');
@@ -52,7 +57,7 @@ async function readPostFile(filePath: string) {
 	};
 }
 
-async function findPostBySlug(slug: string) {
+async function findPostBySlug(slug: string): Promise<{ filePath: string; data: PostData } | null> {
 	await ensureBlogDir();
 
 	const directPath = path.join(BLOG_DIR, `${slug}.mdx`);
