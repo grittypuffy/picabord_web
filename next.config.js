@@ -2,6 +2,7 @@
 const nextConfig = {
   typedRoutes: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  output: 'standalone', // For Docker deployments
   images: {
     domains: [],
   },

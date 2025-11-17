@@ -3,7 +3,7 @@
 FROM node:20-alpine AS builder
 
 # disable Next.js telemetry
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
 WORKDIR /app
 
 # Copy package manifests first to leverage Docker cache
@@ -34,11 +34,14 @@ COPY --from=builder /app/package*.json ./
 RUN apk add --no-cache curl
 # Only install production dependencies in the final runtime image to reduce size
 RUN npm ci --omit=dev
-# NOTE: We copy only the assets required to run the site
-COPY --from=builder /app/.next ./.next
+# Copy standalone build output (includes all dependencies)
+COPY --from=builder /app/.next/standalone ./
+# NOTE: We copy the static assets and public files
+COPY --from=builder /app/.next/static ./.next/static
 # If your app uses a public folder, copy it too
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./next.config.js
+# Copy content directory for MDX blog posts
+COPY --from=builder /app/content ./content
 
 # Expose port
 EXPOSE ${PORT}
@@ -53,5 +56,5 @@ RUN addgroup -S nextgroup && adduser -S nextuser -G nextgroup
 RUN chown -R nextuser:nextgroup /app
 USER nextuser
 
-# Start the app via `next start`
-CMD ["npm", "start"]
+# Start the app using the standalone server
+CMD ["node", "server.js"]
