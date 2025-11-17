@@ -15,14 +15,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20 for build validation
+      - name: Setup Node.js 18 for build validation
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Validate build (lint/test/build)
         run: |
           npm ci
+          # Ensure package-lock.json is consistent with package.json; fail if it was modified
+          npm install --package-lock-only
+          git diff --exit-code package-lock.json
+          echo "Installed versions:"
+          npm ls react react-dom @react-three/fiber @react-three/drei
+          # Also run a peer-deps quick-script to detect conflicts
+          chmod +x ./scripts/check-peer-deps.sh
+          ./scripts/check-peer-deps.sh
           npm run lint || echo "Lint failed (non-blocking)"
           npm run test --if-present || echo "Tests failed (non-blocking)"
           npm run build

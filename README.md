@@ -108,3 +108,12 @@ docker-compose -f docker-compose.rpi.yml up -d
 ```
 
 Note: This repository uses React 18.x to ensure compatibility with `framer-motion` and other peer-dependent libraries. If you notice a peer dependency install error, run `npm install` to update the lockfile and ensure your environment uses Node 18+.
+
+After the recent dependency changes, please run locally and commit the lockfile before pushing:
+
+```bash
+npm install
+git add package-lock.json
+git commit -m "chore: update lockfile to match downgraded React & aligned react-three versions"
+git push origin design-improvements-nov-2025
+```
