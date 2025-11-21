@@ -63,11 +63,8 @@ jobs:
       - name: Determine build platforms
         id: platform_vars
         run: |
-          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            echo "platforms=linux/amd64,linux/arm64" >> $GITHUB_OUTPUT
-          else
-            echo "platforms=linux/amd64" >> $GITHUB_OUTPUT
-          fi
+          # Build only for Raspberry Pi arm64/v8 (aarch64) to target Pi 64-bit
+          echo "platforms=linux/arm64/v8" >> $GITHUB_OUTPUT
 
       - name: Login to GHCR
         uses: docker/login-action@v3

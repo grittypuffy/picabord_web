@@ -1,4 +1,4 @@
-# Implementation Plan
+k# Implementation Plan
 
 - [x] 1. Install Three.js dependencies
 

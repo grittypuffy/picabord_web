@@ -4,7 +4,7 @@
 
 set -euo pipefail
 TAG=${1:-ghcr.io/thatdeveloperoverthere/picabord-web:latest}
-PLATFORMS=${2:-linux/arm64,linux/arm/v7,linux/amd64}
+PLATFORMS=${2:-linux/arm64/v8}
 
 # Ensure a builder is created
 docker buildx create --use --driver docker-container --name picabord-builder || true

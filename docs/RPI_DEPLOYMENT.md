@@ -11,15 +11,15 @@ You can build the multi-arch image locally using Docker Buildx and QEMU:
 ```bash
 # Create a builder (if you haven't)
 docker buildx create --use
-# Build multi-arch and push the image (or remove --push to build locally)
-docker buildx build --platform linux/arm64,linux/amd64 -t ghcr.io/thatdeveloperoverthere/picabord-web:latest --push .
+# Build for Raspberry Pi 64-bit (arm64/v8) and push the image (or remove --push to build locally)
+docker buildx build --platform linux/arm64/v8 -t ghcr.io/thatdeveloperoverthere/picabord-web:latest --push .
 ```
 
 If you prefer to test directly on a single Raspberry Pi device, build for the pi architecture only:
 
 ```bash
-# For a Raspberry Pi 64-bit OS (arm64)
-docker buildx build --platform linux/arm64 -t picabord:local --load .
+# For a Raspberry Pi 64-bit OS (arm64 v8)
+docker buildx build --platform linux/arm64/v8 -t picabord:local --load .
 # For Raspberry Pi OS 32-bit (armv7) (optional - manual build):
 docker buildx build --platform linux/arm/v7 -t picabord:local --load .
 
