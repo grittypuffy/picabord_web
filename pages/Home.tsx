@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import CompanyOverview from "@/components/CompanyOverview";
-import DivisionsSection from "@/components/DivisionsSection";
 
 interface HomeProps {
   onSectionChange: (section: string) => void;
@@ -17,20 +16,14 @@ export default function Home({ onSectionChange }: HomeProps) {
   };
 
   const handleExploreMore = () => {
-    onSectionChange("tec");
-    console.log("Navigating to divisions");
-  };
-
-  const handleDivisionSelect = (division: string) => {
-    onSectionChange(division);
-    console.log(`Navigating to ${division} division`);
+    onSectionChange("about");
+    console.log("Navigating to about");
   };
 
   return (
     <div>
       <Hero onLearnMore={handleLearnMore} onWatchDemo={handleWatchDemo} />
       <CompanyOverview onExploreMore={handleExploreMore} />
-      <DivisionsSection onDivisionSelect={handleDivisionSelect} />
     </div>
   );
 }
