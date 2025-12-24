@@ -15,7 +15,7 @@ import { ReadingProgress } from '@/components/ReadingProgress';
 import { SocialShare } from '@/components/SocialShare';
 import RelatedArticles from '@/components/RelatedArticles';
 import BlogPostTracker from '@/components/BlogPostTracker';
-import { useMDXComponents } from '@/mdx-components';
+import { useMDXComponents } from '@/components/mdx-components';
 
 interface BlogPostPageProps {
   params: Promise<{

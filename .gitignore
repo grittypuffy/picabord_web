@@ -9,3 +9,6 @@ vite.config.ts.*
 .env.local
 .env*.local
 .vercel
+.next
+.local
+next-env.d.ts
