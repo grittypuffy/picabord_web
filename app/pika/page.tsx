@@ -1,7 +1,7 @@
 "use client"
 
-import PIKA from "@/pages/PIKA";
+import PIKA from "@/components/PIKA";
 
 export default function PIKAPage() {
-  return <PIKA onBack={() => {}} />;
+  return <PIKA onBack={() => { }} />;
 }

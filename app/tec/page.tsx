@@ -1,7 +1,7 @@
 "use client"
 
-import Division from "@/pages/Division";
+import Division from "@/components/Division";
 
 export default function TECPage() {
-  return <Division division="tec" onBack={() => {}} />;
+  return <Division division="tec" onBack={() => { }} />;
 }
