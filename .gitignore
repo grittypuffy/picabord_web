@@ -12,3 +12,5 @@ vite.config.ts.*
 .next
 .local
 next-env.d.ts
+.kiro
+.vscode
